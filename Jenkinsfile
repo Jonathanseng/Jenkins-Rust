@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     environment {
-        // Correctly append to the PATH variable using PATH+EXTRA
-        PATH+EXTRA = "/Users/hokborithy/.nvm/versions/node/v16.20.2/bin"
+        PATH = "$PATH:/Users/hokborithy/.nvm/versions/node/v16.20.2/bin"
     }
 
     stages {
