@@ -33,9 +33,9 @@ pipeline {
             }
         }
 
-        // More stages can go here...
+        // You can add more stages here as needed.
     }
-    
+
     post {
         success {
             echo 'Pipeline completed successfully!'
