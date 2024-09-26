@@ -1,16 +1,12 @@
 pipeline {
     agent any
 
-    environment {
-        PATH = "$PATH:/Users/hokborithy/.nvm/versions/node/v16.20.2/bin"
-    }
-
     stages {
         stage('Build') {
             steps {
                 sh '''
-                echo "Building the project..."
-                cargo build --release
+                /bin/bash -c "echo Building the project..."
+                /bin/bash -c "cargo build --release"
                 '''
             }
         }
@@ -18,8 +14,8 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                echo "Running tests..."
-                cargo test
+                /bin/bash -c "echo Running tests..."
+                /bin/bash -c "cargo test"
                 '''
             }
         }
@@ -27,8 +23,8 @@ pipeline {
         stage('Lint') {
             steps {
                 sh '''
-                echo "Linting the code..."
-                cargo clippy -- -D warnings
+                /bin/bash -c "echo Linting the code..."
+                /bin/bash -c "cargo clippy -- -D warnings"
                 '''
             }
         }
