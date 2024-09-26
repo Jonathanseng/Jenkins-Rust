@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        SHELL = "/bin/bash"
+        // Correctly append to the PATH variable using PATH+EXTRA
+        PATH+EXTRA = "/Users/hokborithy/.nvm/versions/node/v16.20.2/bin"
     }
 
     stages {
@@ -32,8 +33,6 @@ pipeline {
                 '''
             }
         }
-
-        // You can add more stages here as needed.
     }
 
     post {
